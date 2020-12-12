@@ -34,3 +34,26 @@ For example, suppose your expense report contained the following:
 In this list, the two entries that sum to 2020 are 1721 and 299.
 Multiplying them together produces 1721 * 299 = 514579, so the correct answer is 514579.
 """
+
+from functools import reduce
+from itertools import combinations
+
+
+def part1(numbers):
+  return reduce(lambda x, y: x * y, list(*filter(lambda comb: sum(comb) == 2020, combinations(numbers, 2))))
+
+
+numbers = None
+
+with open('./input.txt', 'r') as f:
+  numbers = list(map(lambda line: int(line.rstrip('\n')), f.readlines()))
+
+with open('./output.txt', 'w') as f:
+  f.write(f'part1 solution : {part1(numbers)}')
+
+TEST_CASE = {
+  'numbers': [1721, 979, 366, 299, 675, 1456],
+  'result': 514579,
+}
+
+print(part1(TEST_CASE['numbers']) == TEST_CASE['result'])
