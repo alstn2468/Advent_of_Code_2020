@@ -40,20 +40,23 @@ from itertools import combinations
 
 
 def part1(numbers):
-  return reduce(lambda x, y: x * y, list(*filter(lambda comb: sum(comb) == 2020, combinations(numbers, 2))))
+    return reduce(
+        lambda x, y: x * y,
+        list(*filter(lambda comb: sum(comb) == 2020, combinations(numbers, 2))),
+    )
 
 
 numbers = None
 
-with open('./input.txt', 'r') as f:
-  numbers = list(map(lambda line: int(line.rstrip('\n')), f.readlines()))
+with open("./input.txt", "r") as f:
+    numbers = list(map(lambda line: int(line.rstrip("\n")), f.readlines()))
 
-with open('./output.txt', 'w') as f:
-  f.write(f'part1 solution : {part1(numbers)}')
+with open("./output.txt", "w") as f:
+    f.write(f"part1 solution : {part1(numbers)}")
 
 TEST_CASE = {
-  'numbers': [1721, 979, 366, 299, 675, 1456],
-  'result': 514579,
+    "numbers": [1721, 979, 366, 299, 675, 1456],
+    "result": 514579,
 }
 
-print(part1(TEST_CASE['numbers']) == TEST_CASE['result'])
+print(part1(TEST_CASE["numbers"]) == TEST_CASE["result"])
