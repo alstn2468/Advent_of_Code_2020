@@ -32,18 +32,50 @@ third passwords are valid: they contain one a or nine c, both within the
 limits of their respective policies.
 
 How many passwords are valid according to their policies?
+
+--- Part Two ---
+While it appears you validated the passwords correctly, they don't seem to
+be what the Official Toboggan Corporate Authentication System is expecting.
+
+The shopkeeper suddenly realizes that he just accidentally explained the
+password policy rules from his old job at the sled rental place down the
+street! The Official Toboggan Corporate Policy actually works a little
+differently.
+
+Each policy actually describes two positions in the password, where 1 means
+the first character, 2 means the second character, and so on. (Be careful;
+Toboggan Corporate Policies have no concept of "index zero"!) Exactly one
+of these positions must contain the given letter. Other occurrences of the
+letter are irrelevant for the purposes of policy enforcement.
+
+Given the same example list from above:
+
+- 1-3 a: abcde is valid: position 1 contains a and position 3 does not.
+- 1-3 b: cdefg is invalid: neither position 1 nor position 3 contains b.
+- 2-9 c: ccccccccc is invalid: both position 2 and position 9 contain c.
+
+How many passwords are valid according to the new interpretation of the
+policies?
 """
 
-with open('./input.txt', 'r') as input_file, open('./output.txt', 'w') as output_file:
-    part1_result = 0
+with open("./input.txt", "r") as input_file, open("./output.txt", "w") as output_file:
+    part1_result, part2_result = 0, 0
     for line in input_file.readlines():
-        min_max_count, alphabet, password = line.rstrip('\n').split()
-        min_count, max_count = map(int ,min_max_count.split('-'))
+        numbers, alphabet, password = line.rstrip("\n").split()
+        first_num, second_num = map(int, numbers.split("-"))
         alphabet = alphabet[0]
 
-        if (min_count <= password.count(alphabet) <= max_count):
+        if first_num <= password.count(alphabet) <= second_num:
             part1_result += 1
 
-    output_file.write(f'part1 solution : {part1_result}\n')
-        
-        
+        if (
+            alphabet is password[first_num - 1]
+            and alphabet is not password[second_num - 1]
+        ) or (
+            alphabet is not password[first_num - 1]
+            and alphabet is password[second_num - 1]
+        ):
+            part2_result += 1
+
+    output_file.write(f"part1 solution : {part1_result}\n")
+    output_file.write(f"part2 solution : {part2_result}\n")

@@ -1,1 +1,2 @@
 part1 solution : 640
+part2 solution : 472
