@@ -58,23 +58,29 @@ How many passwords are valid according to the new interpretation of the
 policies?
 """
 
+def part1(first_num, second_num, alphabet, password):
+    return first_num <= password.count(alphabet) <= second_num
+
+
+def part2(first_num, second_num, alphabet, password):
+    return (
+        alphabet is password[first_num - 1] and alphabet is not password[second_num - 1]
+    ) or (
+        alphabet is not password[first_num - 1] and alphabet is password[second_num - 1]
+    )
+
+
 with open("./input.txt", "r") as input_file, open("./output.txt", "w") as output_file:
     part1_result, part2_result = 0, 0
     for line in input_file.readlines():
         numbers, alphabet, password = line.rstrip("\n").split()
-        first_num, second_num = map(int, numbers.split("-"))
         alphabet = alphabet[0]
+        first_num, second_num = map(int, numbers.split("-"))
 
-        if first_num <= password.count(alphabet) <= second_num:
+        if part1(first_num, second_num, alphabet, password):
             part1_result += 1
 
-        if (
-            alphabet is password[first_num - 1]
-            and alphabet is not password[second_num - 1]
-        ) or (
-            alphabet is not password[first_num - 1]
-            and alphabet is password[second_num - 1]
-        ):
+        if part2(first_num, second_num, alphabet, password):
             part2_result += 1
 
     output_file.write(f"part1 solution : {part1_result}\n")
