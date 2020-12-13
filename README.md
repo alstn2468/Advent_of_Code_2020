@@ -11,7 +11,7 @@ Advent of Code 2020 🎄 Solutions by `@alstn2468`
 |  1  |    [Report Repair](https://adventofcode.com/2020/day/1)    |  ⭐️   |  ⭐️   | [Python](Python/Day1/code.py) |
 |  2  | [Password Philosophy](https://adventofcode.com/2020/day/2) |  ⭐️   |  ⭐️   | [Python](Python/Day2/code.py) |
 |  3  | [Toboggan Trajectory](https://adventofcode.com/2020/day/3) |  ⭐️   |  ⭐️   | [Python](Python/Day3/code.py) |
-|  4  | [Password Processing](https://adventofcode.com/2020/day/4) |   ⏳   |   ⏳   |                               |
+|  4  | [Password Processing](https://adventofcode.com/2020/day/4) |  ⭐️   |   ⏳   | [Python](Python/Day4/code.py) |
 |  5  |   [Binary Boarding](https://adventofcode.com/2020/day/5)   |   ⏳   |   ⏳   |                               |
 |  6  |   [Custom Customs](https://adventofcode.com/2020/day/6)    |   ⏳   |   ⏳   |                               |
 |  7  |  [Handy Haversacks](https://adventofcode.com/2020/day/7)   |   ⏳   |   ⏳   |                               |
