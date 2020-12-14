@@ -59,9 +59,23 @@ As a sanity check, look through your list of boarding passes. What is the
 highest seat ID on a boarding pass?
 """
 
+def parsing_boarding_pass(boarding_pass):
+    return int(
+        boarding_pass.replace("F", "0")
+        .replace("B", "1")
+        .replace("L", "0")
+        .replace("R", "1"),
+        2,
+    )
+
+
 def part1(boarding_passes):
-  pass
+    return max(list(map(parsing_boarding_pass, boarding_passes)))
 
 
 with open("./input.txt", "r") as input_file, open("./output.txt", "w") as output_file:
-    boarding_passes = list(map(lambda boarding_pass: boarding_pass.strip('\n'), input_file.readlines()))
+    boarding_passes = list(
+        map(lambda boarding_pass: boarding_pass.strip("\n"), input_file.readlines())
+    )
+
+    output_file.write(f"part1 solution : {part1(boarding_passes)}\n")
