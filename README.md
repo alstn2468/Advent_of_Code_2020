@@ -13,7 +13,7 @@ Advent of Code 2020 🎄 Solutions by `@alstn2468`
 |  3  | [Toboggan Trajectory](https://adventofcode.com/2020/day/3) |  ⭐️   |  ⭐️   | [Python](Python/Day3/code.py) |
 |  4  | [Password Processing](https://adventofcode.com/2020/day/4) |  ⭐️   |  ⭐️   | [Python](Python/Day4/code.py) |
 |  5  |   [Binary Boarding](https://adventofcode.com/2020/day/5)   |  ⭐️   |  ⭐️   | [Python](Python/Day5/code.py) |
-|  6  |   [Custom Customs](https://adventofcode.com/2020/day/6)    |   ⏳   |   ⏳   |                               |
+|  6  |   [Custom Customs](https://adventofcode.com/2020/day/6)    |  ⭐️   |   ⏳   | [Python](Python/Day6/code.py) |
 |  7  |  [Handy Haversacks](https://adventofcode.com/2020/day/7)   |   ⏳   |   ⏳   |                               |
 |  8  |  [Handheld Halting](https://adventofcode.com/2020/day/8)   |   ⏳   |   ⏳   |                               |
 |  9  |   [Encoding Error](https://adventofcode.com/2020/day/9)    |   ⏳   |   ⏳   |                               |

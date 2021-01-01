@@ -1,0 +1,2 @@
+part1 solution : 6596
+part2 solution : None
